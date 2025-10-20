@@ -11,9 +11,11 @@ const CLASSES = {
 const menu = document.getElementById("menu");
 const order = document.getElementById("order");
 const orderItems = document.getElementById('order-items');
+const orderTotalPrice = document.getElementById('order-total-price')
+
 
 // Validate DOM elements
-if (!menu || !order || !orderItems) {
+if (!menu || !order || !orderItems || !orderTotalPrice) {
     throw new Error("Required DOM elements not found");
 }
 
@@ -50,23 +52,29 @@ function addOrderBtn(e) {
     const price = Number(priceText.replace('$', ''));
     const id = state.nextId++;
     state.orderList.push({name, price, id});
+    calculateCheckout(e)
     launchOrderList();
 }
 function removeOrderBtn(e) {
     const orderItem = e.target.closest('.order-item');
     if (!orderItem) return;
-
     const id = Number(orderItem.id);
     state.orderList = state.orderList.filter(item => item.id !== id);
+    calculateCheckout(e)
     launchOrderList();
 }
 
 function updateOrderVisibility() {
     order.classList.toggle(CLASSES.HIDDEN, state.orderList.length === 0);
 }
+function calculateCheckout(){
+    let totalPrice = 0 
+    state.orderList.map(item => totalPrice += item.price)
+    orderTotalPrice.innerHTML = "$" + totalPrice 
+}
 
 function launchOrderList() {
-    const orderHtml = state.orderList.length > 0
+    const orderHtml = state.orderList.length > 0    
         ? state.orderList.map(item => `
             <div id="${item.id}" class="order-item">
                 <div class="order-items-name-btn">
