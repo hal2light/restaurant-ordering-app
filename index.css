@@ -4,6 +4,7 @@ body{
     font-family: "Smythe", system-ui;
     font-weight: 400;
     font-style: normal;
+    
 
 }
 .container {
@@ -164,6 +165,66 @@ h3{
     cursor: pointer;
 } 
 
+
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 524px;
+    height: 542px;
+    border: 1px solid black;
+    position: fixed;
+    top:20%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow:0 0 0 1600px rgba(0,0,0,0.15);
+
+
+}
+.payment-title {
+    color: #000;
+    font-family: Verdana;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31.119px; /* 129.664% */
+    margin: 47px auto;
+
+}
+.payment form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment input {
+    color: #757575;
+    font-family: Verdana;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 31.119px; /* 155.596% */
+    border-radius: 3.89px;
+    border: 1.297px solid #757575;
+    padding: 16px 0 13px 26px;
+    margin: 0 23px 23px 23px;
+}
+.payment button {
+    color: var(--white, #FFF);
+    font-family: Verdana;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31.119px; /* 155.596% */
+    border-radius: 3.89px;
+    background: #16DB99;
+    margin: 23px;
+    padding: 15px 0;
+    border: none;
+}
 .hidden {
     display: none;
 }
