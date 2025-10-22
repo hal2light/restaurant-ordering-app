@@ -145,7 +145,7 @@ h3{
     line-height: 24px;
     margin: 14px 0 0 0;
 }
-.order-complete-order{
+.order-complete-order-btn{
     display: flex;
     align-items: center;
     width: 100%;
@@ -224,7 +224,42 @@ h3{
     margin: 23px;
     padding: 15px 0;
     border: none;
+    cursor: pointer;
+
 }
 .hidden {
     display: none;
+}
+.order-completed {
+    border-radius: 3px;
+    color: #065F46;
+    font-family: Smythe;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.8px; /* 52.5% */
+    background: #ECFDF5;
+    margin: 50px 0 250px 0;
+    text-align: center;
+    
+}
+.order-completed p{
+    padding:  51px 0;
+    margin: 0;
+}
+.input-error {
+    border: 2px solid red !important;
+}
+
+.thank-you-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ecfdf5;
+    padding: 2rem 3rem;
+    border-radius: 3px;
+    text-align: center;
+    color: #065f46;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

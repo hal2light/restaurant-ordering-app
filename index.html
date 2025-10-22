@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div id="container" class="container">
         <div class="header">
             <div class="title">
                 <h1>Jimmy’s Diner</h1>
@@ -26,17 +26,39 @@
                 <p class="order-total-totalprice">Total price:</p>
                 <p id= "order-total-price"class="order-total-price"></p>
             </div>
-            <button class="order-complete-order">Complete order</button>
+            <button class="order-complete-order-btn">Complete order</button>
             
         </div>
-        <div class="payment hidden">
+        <div id="order-completed" class="order-completed hidden">
+            <p id ="order-completed-thanks"></p>
+        </div>
+        <div id="payment" class="payment hidden">
             <p class="payment-title">Enter card details</p>
-            <form>
-                <input type="text" name="name" id="name" placeholder="Enter your name">
-                <input type="text" name="number" id="card-num" placeholder="Enter card number">
-                <input type="text" name="number" id="cvv" placeholder="Enter CVV">
+            <form id="payment-form" novalidate>
+                <input type="text" 
+                       name="customerName" 
+                       id="name" 
+                       placeholder="Enter your name" 
+                       required
+                       minlength="2">
+                <input type="text" 
+                       name="cardNumber" 
+                       id="card-num" 
+                       placeholder="Enter card number" 
+                       required 
+                       pattern="\d*"
+                       minlength="16" 
+                       maxlength="16">
+                <input type="text" 
+                       name="cvv" 
+                       id="cvv" 
+                       placeholder="Enter CVV" 
+                       required
+                       pattern="\d*"
+                       minlength="3" 
+                       maxlength="4">
+                <button type="submit" class="payment-btn">Pay</button>
             </form>
-            <button class="payment-btn">Pay</button>
         </div>
     </div>
     
